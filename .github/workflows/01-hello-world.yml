@@ -25,3 +25,5 @@ jobs:
         run: pwd
       - name: Lista os arquivos no diretório home
         run: ls -a
+      - name: Mostra o repo
+        run: echo "Esse mostra o repo ${{ github.repository }} "
