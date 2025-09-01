@@ -11,10 +11,11 @@ on:
     # pois permite rodar o pipeline de backend apenas quando o código do backend muda,
     # e não quando o frontend ou a documentação são alterados.
     paths:
+      - 'backend/**'      # Executa se qualquer arquivo dentro do diretório 'backend' for alterado.
       - '**.html'           # Executa se qualquer arquivo com a extensão .md for alterado em qualquer lugar do repositório.
 
 # Jobs que o workflow executará
-jobs: 
+jobs:
   # Nome do job
   log-path-info:
     # Máquina virtual onde o job será executado
@@ -24,5 +25,5 @@ jobs:
     steps:
       - name: Exibe informações do path
         run: |
-          echo "Workflow acionado por uma alteração em arquivos '.md'."
+          echo "Workflow acionado por uma alteração em 'backend/**' ou em arquivos '.md'."
           echo "Verifique os arquivos modificados no commit para confirmar."
